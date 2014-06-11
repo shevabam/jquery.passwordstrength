@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+    <meta charset="utf-8">
+    <title>jQuery :: Password Strength</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="jquery.passwordstrength.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery.passwordstrength.css">
+
+    <style>
+    body {
+        font-family: Arial;
+        font-size: 12px;
+    }
+    form > section {
+        position: relative;
+    }
+    input#pwd {
+        width: 200px; 
+        padding: 3px;
+        color: #000;
+    }
+    </style>
+
+    <script>
+    $(function(){
+
+        $('input#pwd').passwordstrength({
+            'minlength': 6,
+            'number'   : true,
+            'capital'  : true,
+            'special'  : true,
+            'labels'   : {
+                'general'   : 'Le mot de passe doit avoir :',
+                'minlength' : 'Au moins {{minlength}} caractères',
+                'number'    : 'Au moins un chiffre',
+                'capital'   : 'Au moins une lettre majuscule',
+                'special'   : 'Au moins un caractère spécial'
+            }
+        });
+        
+    });
+    </script>
+</head>
+
+
+<body>
+    
+
+<form>
+    <section>
+        <label>Your password :</label>
+        <input type="password" id="pwd" />
+    </section>
+</form>
+
+
+    
+</body>
+</html>
